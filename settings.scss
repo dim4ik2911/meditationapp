@@ -109,3 +109,41 @@
              
       }
     }
+
+
+    @media screen and (orientation: landscape) {
+        :root {
+          body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+              
+            .header {
+                .logo {
+                    margin: 2rem 0;
+                }
+            }    
+            .settings {
+               
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 1fr;
+    
+                .timer {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                }
+                .audio {
+                    grid-column: 2 / 3;     
+                    grid-row: 1 / 2;
+                }
+                .flow {
+                    grid-column: 3 / 4;
+                    grid-row: 1 / 2;
+                }
+            }
+        
+                 
+          }
+        }
+    }

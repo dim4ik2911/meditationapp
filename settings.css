@@ -95,3 +95,31 @@
 :root body .settings .flow {
   grid-row: 3/4;
 }
+
+@media screen and (orientation: landscape) {
+  :root body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  :root body .header .logo {
+    margin: 2rem 0;
+  }
+  :root body .settings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+  }
+  :root body .settings .timer {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  :root body .settings .audio {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  :root body .settings .flow {
+    grid-column: 3/4;
+    grid-row: 1/2;
+  }
+}

@@ -18,8 +18,11 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(7, 1fr);
     height: 100vh;
-
   }
+
+   
+   
+   
 
     .timer {
         grid-row: 1 / 2;
@@ -98,4 +101,33 @@
       .music {
         grid-row: 7 / 8;
   }
+}
+
+@media screen and (orientation: landscape) {
+  :root {
+  .timer {
+    p {
+        font-size: 2rem;
+    }
+  }
+  .breathe {
+    &__circle {
+        height: 15rem;
+        width: 15rem;
+        font-size: 2rem;
+    }
+  }
+  .flow, .music {
+    .flow-player,
+    .music-player {
+        p {
+            font-size: 2rem;
+        }
+        img {
+            width: 2rem;
+            height: 2rem;
+        }
+    }         
+  }
+}
 }
