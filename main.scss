@@ -1,0 +1,99 @@
+/* height: 568px;
+    width: 320px; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+      font-size: 62.5%; //1rem === 10px;
+  body {
+    background-color: #fff5ef;
+    color: #fff;
+    border: .6rem solid #ffc0a1;
+    font-family: 'Concert One', cursive;
+    text-transform: uppercase;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, 1fr);
+    height: 100vh;
+
+  }
+
+    .timer {
+        grid-row: 1 / 2;
+        background-color: #ffe7dc;
+        border-bottom: .4rem solid #ffc0a1;
+
+        img {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+
+            height: 2.5rem;
+            width: 2.5rem;
+
+            border-radius: 50%;
+            border: .2rem solid #fff;
+        }
+
+        p {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+        }
+      }
+      
+      .breathe {
+        grid-row: 2 / 6;
+        justify-self: center;
+        align-self: center;
+        
+        &__circle {
+            background-color: #ffcdb4;
+            border-radius: 50%;
+            border: .5rem solid #ffc0a1;
+            height: 20rem;
+            width: 20rem;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 3rem;
+            text-align: center;
+        }
+      }
+
+      .flow, .music {
+        grid-row: 6 / 7;
+        background-color: #ffe7dc;
+        border-top: .5rem solid #ffc0a1;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .flow-player,
+        .music-player {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            p {
+                font-size: 2.5rem;
+            }
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }         
+      }
+      .music {
+        grid-row: 7 / 8;
+  }
+}

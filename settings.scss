@@ -1,0 +1,111 @@
+/* height: 568px;
+    width: 320px; */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        font-size: 62.5%; //1rem === 10px;
+      body {
+        background-color: #ffe7dc;
+        color: #fff;
+        border: 1rem solid #ffc0a1;
+        font-family: 'Concert One', cursive;
+        text-transform: uppercase;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr  1fr 1fr 1fr;
+        height: 100vh;
+          
+        .header {
+            grid-row: 1 / 2;
+            justify-self: center;
+            align-self: center;
+            
+            img {
+                position: absolute;
+                top: 1.5rem;
+                left: 1.5rem;
+
+                height: 5rem;
+                width: 5rem;
+
+            }
+            .logo {
+                margin: 4rem 0;
+                background-color: #ffcdb4;
+                border-radius: 50%;
+                border: .375rem solid #ffc0a1;
+                height: 9.75rem;
+                width: 9.75rem;
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                font-size: 1.3125rem;
+                text-align: center;
+    
+                animation: breath 3s linear infinite;
+            }
+        }
+        @keyframes breath {
+            0% {
+                transform: scale(1)
+            }
+            50% {
+                transform: scale(1.1)
+            }
+            100% {
+                transform: scale(1)
+            }
+        }
+            
+        .settings {
+            grid-row: 2 / 5;
+
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+
+            .timer,
+            .audio,
+            .flow {
+                grid-row: 1 / 2;
+                align-self: center;
+                justify-self: center;
+
+                display: grid;
+                flex-direction: column;
+
+                h3 {
+                    font-size: 3rem;
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+                p {
+                    text-align: center;
+                    font-size: 2rem;
+                }
+
+            }
+            .audio {
+                grid-row: 2 / 3;     
+
+                .choice {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+            }
+            .flow {
+                grid-row: 3 / 4;
+            }
+        }
+    
+             
+      }
+    }
