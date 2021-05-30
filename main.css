@@ -9,107 +9,131 @@
 :root {
   font-size: 62.5%;
 }
-:root body {
-  background-color: #fff5ef;
+
+body {
+  background: linear-gradient(to bottom, #fff, #fff5ef);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meditation {
+  height: 568px;
+  width: 320px;
+  background-color: #ffe7dc;
   color: #fff;
-  border: 0.6rem solid #ffc0a1;
+  border: 5px solid #fff;
   font-family: "Concert One", cursive;
-  text-transform: uppercase;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(7, 1fr);
-  height: 100vh;
+  grid-template-rows: 1fr 4fr 1fr;
 }
-:root .timer {
-  grid-row: 1/2;
-  background-color: #ffe7dc;
-  border-bottom: 0.4rem solid #ffc0a1;
-}
-:root .timer img {
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-  height: 2.5rem;
-  width: 2.5rem;
-  border-radius: 50%;
-  border: 0.2rem solid #fff;
-}
-:root .timer p {
-  height: 100%;
+.meditation .timer,
+.meditation .breathe,
+.meditation .flow,
+.meditation .music {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.meditation .timer {
+  grid-row: 1/2;
+  position: relative;
+  border-bottom: 5px solid #fff;
+  background-color: #ffcdb4;
+}
+.meditation .timer__set-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #ffcdb4;
+  font-family: "Concert One", cursive;
   font-size: 2.5rem;
 }
-:root .breathe {
-  grid-row: 2/6;
-  justify-self: center;
-  align-self: center;
-}
-:root .breathe__circle {
-  background-color: #ffcdb4;
-  border-radius: 50%;
-  border: 0.5rem solid #ffc0a1;
-  height: 20rem;
-  width: 20rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  text-align: center;
-}
-:root .flow, :root .music {
+.meditation .breathe {
+  grid-row: 2/3;
   background-color: #ffe7dc;
-  border-top: 0.5rem solid #ffc0a1;
+  border-bottom: 5px solid #fff;
+  position: relative;
+}
+.meditation .breathe__circle {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background-color: #ffcdb4;
+  border: 5px solid #fff;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-:root .flow .flow-player,
-:root .flow .music-player, :root .music .flow-player,
-:root .music .music-player {
-  width: 100%;
+.meditation .breathe__circle.grow {
+  animation: grow 2.5s linear forwards;
+}
+.meditation .breathe__circle.shrink {
+  animation: shrink 2.5s linear forwards;
+}
+@keyframes grow {
+  from {
+    transform: scale(1);
+    background-color: #ffcdb4;
+  }
+  to {
+    transform: scale(1.2);
+    background-color: #ffc0a1;
+  }
+}
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+    background-color: #ffc0a1;
+  }
+  to {
+    transform: scale(1);
+    background-color: #ffcdb4;
+  }
+}
+@keyframes colorChange {
+  0% {
+    background-color: #ffcdb4;
+  }
+  40% {
+    background-color: #ffc0a1;
+  }
+  60% {
+    background-color: #ffc0a1;
+  }
+  100% {
+    background-color: #ffcdb4;
+  }
+}
+.meditation .breathe__circle .breathe__start {
+  font-family: "Concert One", cursive;
+  font-size: 3rem;
+  color: #fff;
+  background-color: inherit;
+}
+.meditation .music {
+  grid-row: 3/4;
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-:root .flow .flow-player p,
-:root .flow .music-player p, :root .music .flow-player p,
-:root .music .music-player p {
-  font-size: 3rem;
-}
-:root .flow .flow-player img,
-:root .flow .music-player img, :root .music .flow-player img,
-:root .music .music-player img {
-  width: 3rem;
-  height: 3rem;
-}
-:root .flow {
-  grid-row: 6/7;
-}
-:root .music {
-  grid-row: 7/8;
+  width: 100%;
+  font-size: 2.5rem;
+  background-color: #ffcdb4;
 }
 
-@media screen and (orientation: landscape) {
-  :root .timer p {
-    font-size: 2rem;
-  }
-  :root .breathe__circle {
-    height: 15rem;
-    width: 15rem;
-    font-size: 2rem;
-  }
-  :root .flow .flow-player p,
-:root .flow .music-player p, :root .music .flow-player p,
-:root .music .music-player p {
-    font-size: 2rem;
-  }
-  :root .flow .flow-player img,
-:root .flow .music-player img, :root .music .flow-player img,
-:root .music .music-player img {
-    width: 2rem;
-    height: 2rem;
-  }
+button {
+  background-color: #ffcdb4;
+  border: none;
+  text-decoration: none;
+  font-family: "Concert One", cursive;
+  color: #fff;
+  font-size: 3rem;
+}
+
+img {
+  width: 3rem;
+  height: 3rem;
 }

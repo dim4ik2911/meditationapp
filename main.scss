@@ -1,133 +1,168 @@
 /* height: 568px;
     width: 320px; */
-
+$peach-color1: #fff5ef;
+$peach-color2: #ffe7dc;
+$peach-color3: #ffdac8;
+$peach-color4: #ffcdb4;
+$peach-color5: #ffc0a1;
+$peach-color6: #f6a983;
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  :root {
-      font-size: 62.5%; //1rem === 10px;
-  body {
-    background-color: #fff5ef;
-    color: #fff;
-    border: .6rem solid #ffc0a1;
-    font-family: 'Concert One', cursive;
-    text-transform: uppercase;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(7, 1fr);
-    height: 100vh;
-  }
-
-   
-   
-   
-
-    .timer {
-        grid-row: 1 / 2;
-        background-color: #ffe7dc;
-        border-bottom: .4rem solid #ffc0a1;
-
-        img {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-
-            height: 2.5rem;
-            width: 2.5rem;
-
-            border-radius: 50%;
-            border: .2rem solid #fff;
-        }
-
-        p {
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-        }
-      }
-      
-      .breathe {
-        grid-row: 2 / 6;
-        justify-self: center;
-        align-self: center;
-        
-        &__circle {
-            background-color: #ffcdb4;
-            border-radius: 50%;
-            border: .5rem solid #ffc0a1;
-            height: 20rem;
-            width: 20rem;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            font-size: 3rem;
-            text-align: center;
-        }
-      }
-
-      .flow, .music {
-        background-color: #ffe7dc;
-        border-top: .5rem solid #ffc0a1;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        .flow-player,
-        .music-player {
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            p {
-                font-size: 3rem;
-            }
-            img {
-                width: 3rem;
-                height: 3rem;
-            }
-        }         
-      }
-      .flow {
-        grid-row: 6 / 7;
-      }
-      .music {
-        grid-row: 7 / 8;
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%; //1rem === 10px;
 }
 
-@media screen and (orientation: landscape) {
-  :root {
+body {
+  background: linear-gradient(to bottom, #fff, $peach-color1);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meditation {
+  height: 568px;
+  width: 320px;
+  background-color: $peach-color2;
+  color: #fff;
+  border: 5px solid #fff;
+  font-family: "Concert One", cursive;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 4fr 1fr;
+
+  .timer,
+  .breathe,
+  .flow,
+  .music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .timer {
-    p {
-        font-size: 2rem;
+    grid-row: 1 / 2;
+    position: relative;
+    border-bottom: 5px solid #fff;
+    background-color: $peach-color4;
+
+    // .settings {
+    //   position: absolute;
+    //   top: 0.5rem;
+    //   left: 0.5rem;
+    //   border-radius: 50%;
+    //   border: 1px solid #fff;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   img {
+    //     width: 2rem;
+    //     height: 2rem;
+    //   }
+    // }
+
+    &__set-time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: $peach-color4;
+      font-family: "Concert One", cursive;
+      font-size: 2.5rem;
     }
   }
   .breathe {
+    grid-row: 2 / 3;
+    background-color: $peach-color2;
+    border-bottom: 5px solid #fff;
+    position: relative;
+
     &__circle {
-        height: 15rem;
-        width: 15rem;
-        font-size: 2rem;
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-color: $peach-color4;
+      border: 5px solid #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.grow {
+        animation: grow 2.5s linear forwards;
+      }
+
+      &.shrink {
+        animation: shrink 2.5s linear forwards;
+      }
+
+      @keyframes grow {
+        from {
+          transform: scale(1);
+          background-color: $peach-color4;
+        }
+        to {
+          transform: scale(1.2);
+          background-color: $peach-color5;
+        }
+      }
+
+      @keyframes shrink {
+        from {
+          transform: scale(1.2);
+          background-color: $peach-color5;
+        }
+        to {
+          transform: scale(1);
+          background-color: $peach-color4;
+        }
+      }
+
+      @keyframes colorChange {
+        0% {
+          background-color: $peach-color4;
+        }
+        40% {
+          background-color: $peach-color5;
+        }
+        60% {
+          background-color: $peach-color5;
+        }
+        100% {
+          background-color: $peach-color4;
+        }
+      }
+
+      .breathe__start {
+        font-family: "Concert One", cursive;
+        font-size: 3rem;
+        color: #fff;
+        background-color: inherit;
+      }
     }
   }
-  .flow, .music {
-    .flow-player,
-    .music-player {
-        p {
-            font-size: 2rem;
-        }
-        img {
-            width: 2rem;
-            height: 2rem;
-        }
-    }         
+
+  .music {
+    grid-row: 3 / 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    font-size: 2.5rem;
+    background-color: $peach-color4;
   }
 }
+
+button {
+  background-color: $peach-color4;
+  border: none;
+  text-decoration: none;
+  font-family: "Concert One", cursive;
+  color: #fff;
+  font-size: 3rem;
+}
+img {
+  width: 3rem;
+  height: 3rem;
 }
