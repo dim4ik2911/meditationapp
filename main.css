@@ -69,15 +69,28 @@ body {
   align-items: center;
 }
 .meditation .breathe__circle.grow {
-  animation: grow 2.5s linear forwards;
+  animation: grow 3s linear forwards;
+}
+.meditation .breathe__circle.hold {
+  animation: hold 2s linear forwards;
 }
 .meditation .breathe__circle.shrink {
-  animation: shrink 2.5s linear forwards;
+  animation: shrink 3s linear forwards;
 }
 @keyframes grow {
   from {
     transform: scale(1);
     background-color: #ffcdb4;
+  }
+  to {
+    transform: scale(1.2);
+    background-color: #ffc0a1;
+  }
+}
+@keyframes hold {
+  from {
+    transform: scale(1.2);
+    background-color: #ffc0a1;
   }
   to {
     transform: scale(1.2);
@@ -91,20 +104,6 @@ body {
   }
   to {
     transform: scale(1);
-    background-color: #ffcdb4;
-  }
-}
-@keyframes colorChange {
-  0% {
-    background-color: #ffcdb4;
-  }
-  40% {
-    background-color: #ffc0a1;
-  }
-  60% {
-    background-color: #ffc0a1;
-  }
-  100% {
     background-color: #ffcdb4;
   }
 }

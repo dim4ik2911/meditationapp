@@ -90,11 +90,15 @@ body {
       align-items: center;
 
       &.grow {
-        animation: grow 2.5s linear forwards;
+        animation: grow 3s linear forwards;
+      }
+
+      &.hold {
+        animation: hold 2s linear forwards;
       }
 
       &.shrink {
-        animation: shrink 2.5s linear forwards;
+        animation: shrink 3s linear forwards;
       }
 
       @keyframes grow {
@@ -107,7 +111,16 @@ body {
           background-color: $peach-color5;
         }
       }
-
+      @keyframes hold {
+        from {
+          transform: scale(1.2);
+          background-color: $peach-color5;
+        }
+        to {
+          transform: scale(1.2);
+          background-color: $peach-color5;
+        }
+      }
       @keyframes shrink {
         from {
           transform: scale(1.2);
@@ -119,20 +132,20 @@ body {
         }
       }
 
-      @keyframes colorChange {
-        0% {
-          background-color: $peach-color4;
-        }
-        40% {
-          background-color: $peach-color5;
-        }
-        60% {
-          background-color: $peach-color5;
-        }
-        100% {
-          background-color: $peach-color4;
-        }
-      }
+      // @keyframes colorChange {
+      //   0% {
+      //     background-color: $peach-color4;
+      //   }
+      //   40% {
+      //     background-color: $peach-color5;
+      //   }
+      //   60% {
+      //     background-color: $peach-color5;
+      //   }
+      //   100% {
+      //     background-color: $peach-color4;
+      //   }
+      // }
 
       .breathe__start {
         font-family: "Concert One", cursive;

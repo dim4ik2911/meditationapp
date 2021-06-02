@@ -1,39 +1,58 @@
 const circle = document.querySelector(".breathe__circle");
-const totalTime = 6000;
-const breatheTime = (totalTime / 6) * 2.5;
-const holdTime = totalTime / 6;
+// const totalTime = 8000;
+// const breatheTime = (totalTime / 6) * 2.5;
+// const holdTime = totalTime / 6;
 const time = document.getElementById("time");
 const text = document.getElementById("text");
 
 //to default ()
 const breathAnimation = () => {
-  text.innerText = "Breathe In!";
+  isPlaying ? (text.innerText = "Breathe In!") : (text.innerText = "Restart!");
   circle.className = "breathe__circle grow";
-  stopHolding = setTimeout(() => {
-    text.innerText = "Hold";
-    stopBreatheOut = setTimeout(() => {
-      text.innerText = "Breathe out!";
+
+  my2 = setTimeout(function () {
+    isPlaying ? (text.innerText = "Hold!") : (text.innerText = "Restart!");
+    circle.className = "breathe__circle hold";
+
+    my3 = setTimeout(function () {
+      isPlaying
+        ? (text.innerText = "Breathe out!")
+        : (text.innerText = "Restart!");
+
       circle.className = "breathe__circle shrink";
-    }, holdTime);
-  }, breatheTime);
+    }, 2000);
+  }, 3000);
 };
 
 // Animation()
 const pauseButton = document.getElementById("pause-button");
+const imagePause = document.getElementById("image-pause");
 let isPlaying = false;
+// pauseButton.disabled = false;
 const pauseAnimation = () => {
   if (!isPlaying) {
-    pauseButton.src = "./img/pause.svg";
+    imagePause.src = "./img/repeat.svg";
     isPlaying = true;
+    pauseButton.disabled = false;
     breathAnimation();
+    startBreathing = setInterval(breathAnimation, 8000);
     startTimer();
     timingInterval = setInterval(startTimer, 1000);
-    startBreathing = setInterval(breathAnimation, totalTime);
   } else {
-    pauseButton.src = "./img/play.svg";
+    imagePause.src = "./img/play.svg";
     isPlaying = false;
-    clearInterval(startBreathing);
+    pauseButton.disabled = true;
     clearInterval(timingInterval);
+    clearInterval(startBreathing);
+    text.innerHTML = "Restart!";
+    time.innerHTML = "04:00";
+
+    setTimeout(
+      (restartButtonEnable = () => {
+        pauseButton.disabled = false;
+      }),
+      8000
+    );
   }
 };
 pauseButton.addEventListener("click", pauseAnimation);
