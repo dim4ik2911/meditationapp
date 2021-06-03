@@ -89,18 +89,32 @@ body {
       justify-content: center;
       align-items: center;
 
-      &.grow {
-        animation: grow 3s linear forwards;
+      &.slowGrow {
+        animation: slowGrow 0.05s linear forwards;
       }
-
+      &.grow {
+        animation: grow 2.95s linear forwards;
+      }
       &.hold {
         animation: hold 2s linear forwards;
       }
-
       &.shrink {
-        animation: shrink 3s linear forwards;
+        animation: shrink 2.95s linear forwards;
+      }
+      &.slowShrink {
+        animation: slowShrink 0.05s linear forwards;
       }
 
+      @keyframes slowGrow {
+        from {
+          transform: scale(1);
+          background-color: $peach-color4;
+        }
+        to {
+          transform: scale(1);
+          background-color: $peach-color4;
+        }
+      }
       @keyframes grow {
         from {
           transform: scale(1);
@@ -111,6 +125,7 @@ body {
           background-color: $peach-color5;
         }
       }
+
       @keyframes hold {
         from {
           transform: scale(1.2);
@@ -121,10 +136,22 @@ body {
           background-color: $peach-color5;
         }
       }
+
       @keyframes shrink {
         from {
           transform: scale(1.2);
           background-color: $peach-color5;
+        }
+        to {
+          transform: scale(1);
+          background-color: $peach-color4;
+        }
+      }
+
+      @keyframes slowShrink {
+        from {
+          transform: scale(1);
+          background-color: $peach-color4;
         }
         to {
           transform: scale(1);

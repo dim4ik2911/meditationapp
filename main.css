@@ -68,14 +68,30 @@ body {
   justify-content: center;
   align-items: center;
 }
+.meditation .breathe__circle.slowGrow {
+  animation: slowGrow 0.05s linear forwards;
+}
 .meditation .breathe__circle.grow {
-  animation: grow 3s linear forwards;
+  animation: grow 2.95s linear forwards;
 }
 .meditation .breathe__circle.hold {
   animation: hold 2s linear forwards;
 }
 .meditation .breathe__circle.shrink {
-  animation: shrink 3s linear forwards;
+  animation: shrink 2.95s linear forwards;
+}
+.meditation .breathe__circle.slowShrink {
+  animation: slowShrink 0.05s linear forwards;
+}
+@keyframes slowGrow {
+  from {
+    transform: scale(1);
+    background-color: #ffcdb4;
+  }
+  to {
+    transform: scale(1);
+    background-color: #ffcdb4;
+  }
 }
 @keyframes grow {
   from {
@@ -101,6 +117,16 @@ body {
   from {
     transform: scale(1.2);
     background-color: #ffc0a1;
+  }
+  to {
+    transform: scale(1);
+    background-color: #ffcdb4;
+  }
+}
+@keyframes slowShrink {
+  from {
+    transform: scale(1);
+    background-color: #ffcdb4;
   }
   to {
     transform: scale(1);

@@ -7,28 +7,41 @@ const text = document.getElementById("text");
 
 //to default ()
 const breathAnimation = () => {
-  isPlaying ? (text.innerText = "Breathe In!") : (text.innerText = "Restart!");
-  circle.className = "breathe__circle grow";
-
-  my2 = setTimeout(function () {
-    isPlaying ? (text.innerText = "Hold!") : (text.innerText = "Restart!");
-    circle.className = "breathe__circle hold";
-
-    my3 = setTimeout(function () {
+  my1 = setTimeout(function () {
+    isPlaying
+      ? (text.innerText = "Breathe In!")
+      : (text.innerText = "Restart!");
+    circle.className = "breathe__circle slowGrow";
+    my2 = setTimeout(function () {
       isPlaying
-        ? (text.innerText = "Breathe out!")
+        ? (text.innerText = "Breathe In!")
         : (text.innerText = "Restart!");
-
-      circle.className = "breathe__circle shrink";
-    }, 2000);
-  }, 3000);
+      circle.className = "breathe__circle grow";
+      my3 = setTimeout(function () {
+        isPlaying ? (text.innerText = "Hold!") : (text.innerText = "Restart!");
+        circle.className = "breathe__circle hold";
+        my4 = setTimeout(function () {
+          isPlaying
+            ? (text.innerText = "Breathe out!")
+            : (text.innerText = "Restart!");
+          circle.className = "breathe__circle shrink";
+          my5 = setTimeout(function () {
+            isPlaying
+              ? (text.innerText = "Breathe out!")
+              : (text.innerText = "Restart!");
+            circle.className = "breathe__circle slowShrink";
+          }, 2950);
+        }, 2000);
+      }, 2950);
+    }, 0050);
+  }, 0050);
 };
 
 // Animation()
 const pauseButton = document.getElementById("pause-button");
 const imagePause = document.getElementById("image-pause");
 let isPlaying = false;
-// pauseButton.disabled = false;
+pauseButton.disabled = false;
 const pauseAnimation = () => {
   if (!isPlaying) {
     imagePause.src = "./img/repeat.svg";
@@ -39,22 +52,15 @@ const pauseAnimation = () => {
     startTimer();
     timingInterval = setInterval(startTimer, 1000);
   } else {
+    console.log(circle.classList);
+    pauseButton.disabled = true;
     imagePause.src = "./img/play.svg";
     isPlaying = false;
-    pauseButton.disabled = true;
     clearInterval(timingInterval);
     clearInterval(startBreathing);
-    text.innerHTML = "Restart!";
-    time.innerHTML = "04:00";
-
-    setTimeout(
-      (restartButtonEnable = () => {
-        pauseButton.disabled = false;
-      }),
-      8000
-    );
   }
 };
+
 pauseButton.addEventListener("click", pauseAnimation);
 
 //timer
