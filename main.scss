@@ -3,8 +3,10 @@
 $peach-color1: #fff5ef;
 $peach-color2: #ffe7dc;
 $peach-color3: #ffdac8;
-$peach-color4: #ffcdb4;
-$peach-color5: #ffc0a1;
+$peach-color4: rgb(255, 205, 180);
+$peach-color4-2: rgb(255, 203, 177);
+$peach-color4-3: rgb(255, 195, 164);
+$peach-color5: rgb(255, 192, 161);
 $peach-color6: #f6a983;
 * {
   box-sizing: border-box;
@@ -89,69 +91,108 @@ body {
       justify-content: center;
       align-items: center;
 
-      &.slowGrow {
-        animation: slowGrow 0.05s linear forwards;
+      &.grow1 {
+        animation: grow1 1s linear forwards;
       }
-      &.grow {
-        animation: grow 2.95s linear forwards;
+      &.grow2 {
+        animation: grow2 1s linear forwards;
       }
-      &.hold {
-        animation: hold 2s linear forwards;
+      &.grow3 {
+        animation: grow3 1s linear forwards;
       }
-      &.shrink {
-        animation: shrink 2.95s linear forwards;
+      &.hold1 {
+        animation: hold1 1s linear forwards;
       }
-      &.slowShrink {
-        animation: slowShrink 0.05s linear forwards;
+      &.hold2 {
+        animation: hold2 1s linear forwards;
+      }
+      &.shrink1 {
+        animation: shrink1 1s linear forwards;
+      }
+      &.shrink2 {
+        animation: shrink2 1s linear forwards;
+      }
+      &.shrink3 {
+        animation: shrink3 1s linear forwards;
       }
 
-      @keyframes slowGrow {
+      @keyframes grow1 {
         from {
           transform: scale(1);
           background-color: $peach-color4;
         }
         to {
-          transform: scale(1);
-          background-color: $peach-color4;
+          transform: scale(1.1);
+          background-color: $peach-color4-2;
         }
       }
-      @keyframes grow {
+      @keyframes grow2 {
         from {
-          transform: scale(1);
-          background-color: $peach-color4;
+          transform: scale(1.1);
+          background-color: $peach-color4-2;
         }
         to {
           transform: scale(1.2);
+          background-color: $peach-color4-3;
+        }
+      }
+      @keyframes grow3 {
+        from {
+          transform: scale(1.2);
+          background-color: $peach-color4-3;
+        }
+        to {
+          transform: scale(1.3);
           background-color: $peach-color5;
         }
       }
 
-      @keyframes hold {
+      @keyframes hold1 {
         from {
-          transform: scale(1.2);
+          transform: scale(1.3);
           background-color: $peach-color5;
         }
         to {
-          transform: scale(1.2);
+          transform: scale(1.3);
+          background-color: $peach-color5;
+        }
+      }
+      @keyframes hold2 {
+        from {
+          transform: scale(1.3);
+          background-color: $peach-color5;
+        }
+        to {
+          transform: scale(1.3);
           background-color: $peach-color5;
         }
       }
 
-      @keyframes shrink {
+      @keyframes shrink1 {
         from {
-          transform: scale(1.2);
+          transform: scale(1.3);
           background-color: $peach-color5;
         }
         to {
-          transform: scale(1);
-          background-color: $peach-color4;
+          transform: scale(1.2);
+          background-color: $peach-color4-3;
         }
       }
 
-      @keyframes slowShrink {
+      @keyframes shrink2 {
         from {
-          transform: scale(1);
-          background-color: $peach-color4;
+          transform: scale(1.2);
+          background-color: $peach-color4-3;
+        }
+        to {
+          transform: scale(1.1);
+          background-color: $peach-color4-2;
+        }
+      }
+      @keyframes shrink3 {
+        from {
+          transform: scale(1.1);
+          background-color: $peach-color4-2;
         }
         to {
           transform: scale(1);

@@ -73,9 +73,7 @@ const startTimer = () => {
   let timeArray = presentTime.split(":");
   let m = parseInt(timeArray[0]);
   let s = checkSeconds(parseInt(timeArray[1] - 1));
-  if (presentTime == `00:00`) {
-    return;
-  }
+
   if (s == 59) {
     m = m - 1;
   }
@@ -100,19 +98,38 @@ let secondsCircle = 0;
 const secondsCycle = () => {
   secondsCircle++;
   console.log(secondsCircle);
+  // if (time == `00 00`) {
+  //   startButton.innerHTML = `Well Done!`;
+  //   return;
+  // }
   if (secondsCircle == 9) {
     secondsCircle = 1;
   }
 
-  if (secondsCircle >= 0 && secondsCircle <= 3) {
+  if (secondsCircle == 1) {
     text.innerText = "Breathe In!";
-    circle.className = "breathe__circle grow";
-  } else if (secondsCircle >= 3 && secondsCircle <= 5) {
+    circle.className = "breathe__circle grow1";
+  } else if (secondsCircle == 2) {
+    text.innerText = "Breathe In!";
+    circle.className = "breathe__circle grow2";
+  } else if (secondsCircle == 3) {
+    text.innerText = "Breathe In!";
+    circle.className = "breathe__circle grow3";
+  } else if (secondsCircle == 4) {
     text.innerText = "Hold!";
-    circle.className = "breathe__circle hold";
-  } else if (secondsCircle >= 5 && secondsCircle <= 8) {
+    circle.className = "breathe__circle hold1";
+  } else if (secondsCircle == 5) {
+    text.innerText = "Hold!";
+    circle.className = "breathe__circle hold2";
+  } else if (secondsCircle == 6) {
     text.innerText = "Breathe out!";
-    circle.className = "breathe__circle shrink";
+    circle.className = "breathe__circle shrink1";
+  } else if (secondsCircle == 7) {
+    text.innerText = "Breathe out!";
+    circle.className = "breathe__circle shrink2";
+  } else if (secondsCircle == 8) {
+    text.innerText = "Breathe out!";
+    circle.className = "breathe__circle shrink3";
   }
 };
 

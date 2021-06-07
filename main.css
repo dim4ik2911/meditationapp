@@ -68,65 +68,104 @@ body {
   justify-content: center;
   align-items: center;
 }
-.meditation .breathe__circle.slowGrow {
-  animation: slowGrow 0.05s linear forwards;
+.meditation .breathe__circle.grow1 {
+  animation: grow1 1s linear forwards;
 }
-.meditation .breathe__circle.grow {
-  animation: grow 2.95s linear forwards;
+.meditation .breathe__circle.grow2 {
+  animation: grow2 1s linear forwards;
 }
-.meditation .breathe__circle.hold {
-  animation: hold 2s linear forwards;
+.meditation .breathe__circle.grow3 {
+  animation: grow3 1s linear forwards;
 }
-.meditation .breathe__circle.shrink {
-  animation: shrink 2.95s linear forwards;
+.meditation .breathe__circle.hold1 {
+  animation: hold1 1s linear forwards;
 }
-.meditation .breathe__circle.slowShrink {
-  animation: slowShrink 0.05s linear forwards;
+.meditation .breathe__circle.hold2 {
+  animation: hold2 1s linear forwards;
 }
-@keyframes slowGrow {
+.meditation .breathe__circle.shrink1 {
+  animation: shrink1 1s linear forwards;
+}
+.meditation .breathe__circle.shrink2 {
+  animation: shrink2 1s linear forwards;
+}
+.meditation .breathe__circle.shrink3 {
+  animation: shrink3 1s linear forwards;
+}
+@keyframes grow1 {
   from {
     transform: scale(1);
     background-color: #ffcdb4;
   }
   to {
-    transform: scale(1);
-    background-color: #ffcdb4;
+    transform: scale(1.1);
+    background-color: #ffcbb1;
   }
 }
-@keyframes grow {
+@keyframes grow2 {
   from {
-    transform: scale(1);
-    background-color: #ffcdb4;
+    transform: scale(1.1);
+    background-color: #ffcbb1;
   }
   to {
     transform: scale(1.2);
+    background-color: #ffc3a4;
+  }
+}
+@keyframes grow3 {
+  from {
+    transform: scale(1.2);
+    background-color: #ffc3a4;
+  }
+  to {
+    transform: scale(1.3);
     background-color: #ffc0a1;
   }
 }
-@keyframes hold {
+@keyframes hold1 {
   from {
-    transform: scale(1.2);
+    transform: scale(1.3);
+    background-color: #ffc0a1;
+  }
+  to {
+    transform: scale(1.3);
+    background-color: #ffc0a1;
+  }
+}
+@keyframes hold2 {
+  from {
+    transform: scale(1.3);
+    background-color: #ffc0a1;
+  }
+  to {
+    transform: scale(1.3);
+    background-color: #ffc0a1;
+  }
+}
+@keyframes shrink1 {
+  from {
+    transform: scale(1.3);
     background-color: #ffc0a1;
   }
   to {
     transform: scale(1.2);
-    background-color: #ffc0a1;
+    background-color: #ffc3a4;
   }
 }
-@keyframes shrink {
+@keyframes shrink2 {
   from {
     transform: scale(1.2);
-    background-color: #ffc0a1;
+    background-color: #ffc3a4;
   }
   to {
-    transform: scale(1);
-    background-color: #ffcdb4;
+    transform: scale(1.1);
+    background-color: #ffcbb1;
   }
 }
-@keyframes slowShrink {
+@keyframes shrink3 {
   from {
-    transform: scale(1);
-    background-color: #ffcdb4;
+    transform: scale(1.1);
+    background-color: #ffcbb1;
   }
   to {
     transform: scale(1);
