@@ -19,18 +19,21 @@ $peach-color6: #f6a983;
 
 body {
   background: linear-gradient(to bottom, #fff, $peach-color1);
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .meditation {
-  height: 568px;
-  width: 320px;
+  // min-height: 568px;
+  // min-width: 320px;
+  height: 100vh;
+  width: 100vw;
   background-color: $peach-color2;
   color: #fff;
-  border: 5px solid #fff;
+  border: 0.5rem solid #fff;
   font-family: "Concert One", cursive;
   display: grid;
   grid-template-columns: 1fr;
@@ -47,7 +50,7 @@ body {
   .timer {
     grid-row: 1 / 2;
     position: relative;
-    border-bottom: 5px solid #fff;
+    border-bottom: 0.5rem solid #fff;
     background-color: $peach-color4;
 
     // .settings {
@@ -78,7 +81,7 @@ body {
   .breathe {
     grid-row: 2 / 3;
     background-color: $peach-color2;
-    border-bottom: 5px solid #fff;
+    border-bottom: 0.5rem solid #fff;
     position: relative;
 
     &__circle {
@@ -86,10 +89,11 @@ body {
       height: 21rem;
       border-radius: 50%;
       background-color: $peach-color4;
-      border: 5px solid #fff;
+      border: 0.5rem solid #fff;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 5rem;
 
       &.grow1 {
         animation: grow1 1s linear forwards;
@@ -199,22 +203,6 @@ body {
           background-color: $peach-color4;
         }
       }
-
-      // @keyframes colorChange {
-      //   0% {
-      //     background-color: $peach-color4;
-      //   }
-      //   40% {
-      //     background-color: $peach-color5;
-      //   }
-      //   60% {
-      //     background-color: $peach-color5;
-      //   }
-      //   100% {
-      //     background-color: $peach-color4;
-      //   }
-      // }
-
       .breathe__start {
         font-family: "Concert One", cursive;
         font-size: 3rem;
@@ -247,3 +235,33 @@ img {
   width: 3rem;
   height: 3rem;
 }
+
+//media queries
+@media screen and (min-width: 480px) {
+  :root {
+    font-size: 81.25%; //1rem === 10px;
+  }
+}
+@media screen and (min-width: 600px) {
+  :root {
+    font-size: 93.75%; //1rem === 10px;
+  }
+}
+@media screen and (min-width: 801px) {
+  :root {
+    font-size: 112.5%; //1rem === 10px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  :root {
+    font-size: 118.75%; //1rem === 10px;
+  }
+
+  // min-height: 568px;
+  // min-width: 320px;
+}
+// @media screen and (min-width: 1281px) {
+//   :root {
+//     font-size: 125%; //1rem === 10px;
+//   }
+// }

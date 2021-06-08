@@ -5,15 +5,16 @@ const pauseButton = document.getElementById("pause-button");
 const imagePause = document.getElementById("image-pause");
 const restartButton = document.getElementById("restart-button");
 
+time.innerHTML = "03:00";
 let isPlaying = false;
-
+//3 minutes instead of 4
 //interval
 let secondsCircle = 0;
 const secondsCycle = () => {
   secondsCircle++;
   console.log(secondsCircle);
   if (secondsCircle == 9) {
-    secondsCircle = 1;
+    secondsCircle = 0;
   }
 
   if (secondsCircle == 1) {
@@ -42,69 +43,16 @@ const secondsCycle = () => {
     circle.className = "breathe__circle shrink3";
   }
 };
-// function to restart
-// const secondsBack = () => {
-//   if (secondsCircle < 5) {
-//     do {
-//       secondsCircle--;
-//     } while (secondsCircle <= -1);
-//   } else {
-//     do {
-//       secondsCircle++;
-//     } while (secondsCircle > 9);
-//   }
-//   if (secondsCircle == 9) {
-//     secondsCircle = 0;
-//   }
-
-//   if (secondsCircle == 4) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle hold1";
-//   } else if (secondsCircle == 3) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle shrink1";
-//   } else if (secondsCircle == 2) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle shrink2";
-//   } else if (secondsCircle == 1) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle shrink3";
-//   } else if (secondsCircle == 0) {
-//     text.innerText = "Ready!";
-//     circle.className = "breathe__circle";
-//   }
-//   if (secondsCircle == 5) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle hold1";
-//   } else if (secondsCircle == 6) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle shrink1";
-//   } else if (secondsCircle == 7) {
-//     text.innerText = "Restart soon!";
-//     circle.className = "breathe__circle shrink2";
-//   } else if (secondsCircle == 8) {
-//     text.innerText = "Ready!";
-//     circle.className = "breathe__circle shrink3";
-//   }
-
-//   console.log(secondsCircle);
-// };
 
 restartButton.addEventListener("click", () => {
   clearInterval(startBreathing);
   clearInterval(timingInterval);
   imagePause.src = "./img/play.svg";
-  time.innerHTML = "04:00";
+  time.innerHTML = "03:00";
   isPlaying = false;
   secondsCircle = 0;
-  // circle.className == "breathe__circle";
   text.innerHTML = "Ready!";
   circle.className = "breathe__circle";
-  // secondsBack();
-  // secondsBackInterval = setInterval(secondsBack, 1000);
-  // if (circle.className == "breathe__circle") {
-  //   clearInterval(secondsBackInterval);
-  // }
 });
 
 //timer
@@ -113,6 +61,17 @@ const startTimer = () => {
   let timeArray = presentTime.split(":");
   let m = parseInt(timeArray[0]);
   let s = checkSeconds(parseInt(timeArray[1] - 1));
+  //stop time on 00:00
+  if (m == 0 && s == 0) {
+    console.log("hey");
+    clearInterval(startBreathing);
+    clearInterval(timingInterval);
+    isPlaying = false;
+    imagePause.src = "./img/play.svg";
+    secondsCircle = 0;
+    circle.className = "breathe__circle";
+    text.innerHTML = "Well Done!";
+  }
 
   if (s == 59) {
     m = m - 1;
