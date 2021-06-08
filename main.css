@@ -11,7 +11,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #fff, #fff5ef);
+  background: linear-gradient(to bottom, #fff, #ffcdb4);
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
@@ -20,8 +20,8 @@ body {
 }
 
 .meditation {
-  height: 100vh;
-  width: 100vw;
+  height: 75rem;
+  width: 75rem;
   background-color: #ffe7dc;
   color: #fff;
   border: 0.5rem solid #fff;
@@ -29,6 +29,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr 1fr;
+  margin: 5rem;
 }
 .meditation .timer,
 .meditation .breathe,
@@ -44,14 +45,14 @@ body {
   border-bottom: 0.5rem solid #fff;
   background-color: #ffcdb4;
 }
-.meditation .timer__set-time {
+.meditation .timer #time {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
   background-color: #ffcdb4;
   font-family: "Concert One", cursive;
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 .meditation .breathe {
   grid-row: 2/3;
@@ -60,8 +61,8 @@ body {
   position: relative;
 }
 .meditation .breathe__circle {
-  width: 21rem;
-  height: 21rem;
+  width: 28rem;
+  height: 28rem;
   border-radius: 50%;
   background-color: #ffcdb4;
   border: 0.5rem solid #fff;
@@ -176,7 +177,7 @@ body {
 }
 .meditation .breathe__circle .breathe__start {
   font-family: "Concert One", cursive;
-  font-size: 3rem;
+  font-size: 4.5rem;
   color: #fff;
   background-color: inherit;
 }
@@ -186,7 +187,6 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  font-size: 2.5rem;
   background-color: #ffcdb4;
 }
 
@@ -196,31 +196,9 @@ button {
   text-decoration: none;
   font-family: "Concert One", cursive;
   color: #fff;
-  font-size: 3rem;
 }
 
 img {
-  width: 3rem;
-  height: 3rem;
-}
-
-@media screen and (min-width: 480px) {
-  :root {
-    font-size: 81.25%;
-  }
-}
-@media screen and (min-width: 600px) {
-  :root {
-    font-size: 93.75%;
-  }
-}
-@media screen and (min-width: 801px) {
-  :root {
-    font-size: 112.5%;
-  }
-}
-@media screen and (min-width: 1025px) {
-  :root {
-    font-size: 118.75%;
-  }
+  width: 4rem;
+  height: 4rem;
 }

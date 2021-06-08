@@ -4,8 +4,9 @@ const text = document.getElementById("text");
 const pauseButton = document.getElementById("pause-button");
 const imagePause = document.getElementById("image-pause");
 const restartButton = document.getElementById("restart-button");
+const imageRestart = document.getElementById("image-restart");
 
-time.innerHTML = "03:00";
+time.innerHTML = "00:09";
 let isPlaying = false;
 //3 minutes instead of 4
 //interval
@@ -45,14 +46,16 @@ const secondsCycle = () => {
 };
 
 restartButton.addEventListener("click", () => {
+  imageRestart.src = "./img/repeatgrey.svg";
   clearInterval(startBreathing);
   clearInterval(timingInterval);
   imagePause.src = "./img/play.svg";
-  time.innerHTML = "03:00";
+  time.innerHTML = "00:09";
   isPlaying = false;
   secondsCircle = 0;
   text.innerHTML = "Ready!";
   circle.className = "breathe__circle";
+  pauseButton.disabled = false;
 });
 
 //timer
@@ -67,10 +70,11 @@ const startTimer = () => {
     clearInterval(startBreathing);
     clearInterval(timingInterval);
     isPlaying = false;
-    imagePause.src = "./img/play.svg";
+    imagePause.src = "./img/playgrey.svg";
     secondsCircle = 0;
     circle.className = "breathe__circle";
     text.innerHTML = "Well Done!";
+    pauseButton.disabled = true;
   }
 
   if (s == 59) {
@@ -95,6 +99,7 @@ const checkSeconds = (sec) => {
 //function to pause and start again
 pauseButton.addEventListener("click", () => {
   console.log("clicked");
+  imageRestart.src = "./img/repeat.svg";
   if (!isPlaying) {
     startTimer();
     timingInterval = setInterval(startTimer, 1000);

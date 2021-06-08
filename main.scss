@@ -18,7 +18,7 @@ $peach-color6: #f6a983;
 }
 
 body {
-  background: linear-gradient(to bottom, #fff, $peach-color1);
+  background: linear-gradient(to bottom, #fff, $peach-color4);
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
@@ -29,8 +29,8 @@ body {
 .meditation {
   // min-height: 568px;
   // min-width: 320px;
-  height: 100vh;
-  width: 100vw;
+  height: 75rem;
+  width: 75rem;
   background-color: $peach-color2;
   color: #fff;
   border: 0.5rem solid #fff;
@@ -38,6 +38,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr 1fr;
+  margin: 5rem;
 
   .timer,
   .breathe,
@@ -53,29 +54,14 @@ body {
     border-bottom: 0.5rem solid #fff;
     background-color: $peach-color4;
 
-    // .settings {
-    //   position: absolute;
-    //   top: 0.5rem;
-    //   left: 0.5rem;
-    //   border-radius: 50%;
-    //   border: 1px solid #fff;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   img {
-    //     width: 2rem;
-    //     height: 2rem;
-    //   }
-    // }
-
-    &__set-time {
+    #time {
       display: flex;
       justify-content: center;
       align-items: center;
       color: #fff;
       background-color: $peach-color4;
       font-family: "Concert One", cursive;
-      font-size: 2.5rem;
+      font-size: 4rem;
     }
   }
   .breathe {
@@ -85,8 +71,8 @@ body {
     position: relative;
 
     &__circle {
-      width: 21rem;
-      height: 21rem;
+      width: 28rem;
+      height: 28rem;
       border-radius: 50%;
       background-color: $peach-color4;
       border: 0.5rem solid #fff;
@@ -205,7 +191,7 @@ body {
       }
       .breathe__start {
         font-family: "Concert One", cursive;
-        font-size: 3rem;
+        font-size: 4.5rem;
         color: #fff;
         background-color: inherit;
       }
@@ -218,7 +204,6 @@ body {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    font-size: 2.5rem;
     background-color: $peach-color4;
   }
 }
@@ -229,37 +214,36 @@ button {
   text-decoration: none;
   font-family: "Concert One", cursive;
   color: #fff;
-  font-size: 3rem;
 }
 img {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 //media queries
-@media screen and (min-width: 480px) {
-  :root {
-    font-size: 81.25%; //1rem === 10px;
-  }
-}
-@media screen and (min-width: 600px) {
-  :root {
-    font-size: 93.75%; //1rem === 10px;
-  }
-}
-@media screen and (min-width: 801px) {
-  :root {
-    font-size: 112.5%; //1rem === 10px;
-  }
-}
-@media screen and (min-width: 1025px) {
-  :root {
-    font-size: 118.75%; //1rem === 10px;
-  }
+// @media screen and (min-width: 480px) {
+//   :root {
+//     font-size: 81.25%; //1rem === 10px;
+//   }
+// }
+// @media screen and (min-width: 600px) {
+//   :root {
+//     font-size: 93.75%; //1rem === 10px;
+//   }
+// }
+// @media screen and (min-width: 801px) {
+//   :root {
+//     font-size: 112.5%; //1rem === 10px;
+//   }
+// }
+// @media screen and (min-width: 1025px) {
+//   :root {
+//     font-size: 118.75%; //1rem === 10px;
+//   }
 
-  // min-height: 568px;
-  // min-width: 320px;
-}
+// min-height: 568px;
+// min-width: 320px;
+// }
 // @media screen and (min-width: 1281px) {
 //   :root {
 //     font-size: 125%; //1rem === 10px;
