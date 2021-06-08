@@ -1,107 +1,17 @@
 const circle = document.querySelector(".breathe__circle");
-// const totalTime = 8000;
-// const breatheTime = (totalTime / 6) * 2.5;
-// const holdTime = totalTime / 6;
 const time = document.getElementById("time");
 const text = document.getElementById("text");
-
-//to default ()
-// const breathAnimation = () => {
-//   my1 = setTimeout(function () {
-//     isPlaying
-//       ? (text.innerText = "Breathe In!")
-//       : (text.innerText = "Wait for restart!");
-//     circle.className = "breathe__circle slowGrow";
-//     my2 = setTimeout(function () {
-//       isPlaying
-//         ? (text.innerText = "Breathe In!")
-//         : (text.innerText = "Wait for restart!");
-//       circle.className = "breathe__circle grow";
-//       my3 = setTimeout(function () {
-//         isPlaying
-//           ? (text.innerText = "Hold!")
-//           : (text.innerText = "Wait for restart!");
-//         circle.className = "breathe__circle hold";
-//         my4 = setTimeout(function () {
-//           isPlaying
-//             ? (text.innerText = "Breathe out!")
-//             : (text.innerText = "Wait for restart!");
-//           circle.className = "breathe__circle shrink";
-//           my5 = setTimeout(function () {
-//             isPlaying
-//               ? (text.innerText = "Breathe out!")
-//               : (text.innerText = "Restart!");
-//             circle.className = "breathe__circle slowShrink";
-//           }, 2950);
-//         }, 2000);
-//       }, 2950);
-//     }, 0050);
-//   }, 0050);
-// };
-
-// Animation()
 const pauseButton = document.getElementById("pause-button");
 const imagePause = document.getElementById("image-pause");
+const restartButton = document.getElementById("restart-button");
+
 let isPlaying = false;
-// pauseButton.disabled = false;
-// const pauseAnimation = () => {
-//   console.log("working");
-//   if (!isPlaying) {
-//     imagePause.src = "./img/repeat.svg";
-//     isPlaying = true;
-//     // pauseButton.disabled = false;
-//     breathAnimation();
-//     startBreathing = setInterval(breathAnimation, 8000);
-//     startTimer();
-//     timingInterval = setInterval(startTimer, 1000);
-//   } else {
-//     console.log(circle.classList);
-//     // pauseButton.disabled = true;
-//     imagePause.src = "./img/play.svg";
-//     isPlaying = false;
-//     clearInterval(timingInterval);
-//     clearInterval(startBreathing);
-//     console.log("finsihed");
-//   }
-// };
-
-// pauseButton.addEventListener("click", pauseAnimation);
-
-//timer
-const startTimer = () => {
-  let presentTime = time.innerHTML;
-  let timeArray = presentTime.split(":");
-  let m = parseInt(timeArray[0]);
-  let s = checkSeconds(parseInt(timeArray[1] - 1));
-
-  if (s == 59) {
-    m = m - 1;
-  }
-  if (m < 10) {
-    m = "0" + m;
-  }
-  time.innerHTML = `${m}:${s}`;
-};
-
-const checkSeconds = (sec) => {
-  if (sec < 10 && sec >= 0) {
-    sec = "0" + sec;
-  }
-  if (sec < 0) {
-    sec = "59";
-  }
-  return sec;
-};
 
 //interval
 let secondsCircle = 0;
 const secondsCycle = () => {
   secondsCircle++;
   console.log(secondsCircle);
-  // if (time == `00 00`) {
-  //   startButton.innerHTML = `Well Done!`;
-  //   return;
-  // }
   if (secondsCircle == 9) {
     secondsCircle = 1;
   }
@@ -132,8 +42,100 @@ const secondsCycle = () => {
     circle.className = "breathe__circle shrink3";
   }
 };
+// function to restart
+// const secondsBack = () => {
+//   if (secondsCircle < 5) {
+//     do {
+//       secondsCircle--;
+//     } while (secondsCircle <= -1);
+//   } else {
+//     do {
+//       secondsCircle++;
+//     } while (secondsCircle > 9);
+//   }
+//   if (secondsCircle == 9) {
+//     secondsCircle = 0;
+//   }
 
+//   if (secondsCircle == 4) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle hold1";
+//   } else if (secondsCircle == 3) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle shrink1";
+//   } else if (secondsCircle == 2) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle shrink2";
+//   } else if (secondsCircle == 1) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle shrink3";
+//   } else if (secondsCircle == 0) {
+//     text.innerText = "Ready!";
+//     circle.className = "breathe__circle";
+//   }
+//   if (secondsCircle == 5) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle hold1";
+//   } else if (secondsCircle == 6) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle shrink1";
+//   } else if (secondsCircle == 7) {
+//     text.innerText = "Restart soon!";
+//     circle.className = "breathe__circle shrink2";
+//   } else if (secondsCircle == 8) {
+//     text.innerText = "Ready!";
+//     circle.className = "breathe__circle shrink3";
+//   }
+
+//   console.log(secondsCircle);
+// };
+
+restartButton.addEventListener("click", () => {
+  clearInterval(startBreathing);
+  clearInterval(timingInterval);
+  imagePause.src = "./img/play.svg";
+  time.innerHTML = "04:00";
+  isPlaying = false;
+  secondsCircle = 0;
+  // circle.className == "breathe__circle";
+  text.innerHTML = "Ready!";
+  circle.className = "breathe__circle";
+  // secondsBack();
+  // secondsBackInterval = setInterval(secondsBack, 1000);
+  // if (circle.className == "breathe__circle") {
+  //   clearInterval(secondsBackInterval);
+  // }
+});
+
+//timer
+const startTimer = () => {
+  let presentTime = time.innerHTML;
+  let timeArray = presentTime.split(":");
+  let m = parseInt(timeArray[0]);
+  let s = checkSeconds(parseInt(timeArray[1] - 1));
+
+  if (s == 59) {
+    m = m - 1;
+  }
+  if (m < 10) {
+    m = "0" + m;
+  }
+  time.innerHTML = `${m}:${s}`;
+};
+
+const checkSeconds = (sec) => {
+  if (sec < 10 && sec >= 0) {
+    sec = "0" + sec;
+  }
+  if (sec < 0) {
+    sec = "59";
+  }
+  return sec;
+};
+
+//function to pause and start again
 pauseButton.addEventListener("click", () => {
+  console.log("clicked");
   if (!isPlaying) {
     startTimer();
     timingInterval = setInterval(startTimer, 1000);
@@ -149,5 +151,3 @@ pauseButton.addEventListener("click", () => {
     text.innerHTML = "Paused";
   }
 });
-// breathAnimation();
-//     startBreathing = setInterval(breathAnimation, 8000);
