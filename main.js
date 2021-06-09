@@ -22,7 +22,7 @@ let secondsCircle = 0;
 //count seconds
 const secondsCycle = () => {
   secondsCircle++;
-  console.log(secondsCircle);
+  // console.log(secondsCircle);
   if (secondsCircle == 9) {
     secondsCircle = 0;
   }
