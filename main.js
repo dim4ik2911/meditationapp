@@ -63,7 +63,7 @@ restartButton.addEventListener("click", () => {
   clearInterval(startBreathing);
   clearInterval(timingInterval);
   imagePause.src = "./img/play.svg";
-  time.innerHTML = "00:09";
+  time.innerHTML = "03:00";
   isPlaying = false;
   secondsCircle = 0;
   text.innerHTML = "Ready!";
