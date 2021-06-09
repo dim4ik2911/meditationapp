@@ -18,8 +18,8 @@ body {
 }
 
 .meditation {
-  height: 75rem;
-  width: 75rem;
+  min-height: 100vh;
+  min-width: 100vw;
   background-color: #ffe7dc;
   color: #fff;
   border: 0.5rem solid #fff;
@@ -27,7 +27,6 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 4fr 1fr;
-  margin: 5rem;
 }
 .meditation .timer,
 .meditation .breathe,
@@ -42,6 +41,7 @@ body {
   position: relative;
   border-bottom: 0.5rem solid #fff;
   background-color: #ffcdb4;
+  position: relative;
 }
 .meditation .timer #time {
   display: flex;
@@ -50,17 +50,23 @@ body {
   color: #fff;
   background-color: #ffcdb4;
   font-family: "Concert One", cursive;
-  font-size: 4rem;
+  font-size: 2.5rem;
+}
+.meditation .timer #play-music {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 3rem;
+  width: 3rem;
 }
 .meditation .breathe {
   grid-row: 2/3;
   background-color: #ffe7dc;
   border-bottom: 0.5rem solid #fff;
-  position: relative;
 }
 .meditation .breathe__circle {
-  width: 28rem;
-  height: 28rem;
+  width: 18rem;
+  height: 18rem;
   border-radius: 50%;
   background-color: #ffcdb4;
   border: 0.5rem solid #fff;
@@ -175,7 +181,7 @@ body {
 }
 .meditation .breathe__circle .breathe__start {
   font-family: "Concert One", cursive;
-  font-size: 4.5rem;
+  font-size: 2.9rem;
   color: #fff;
   background-color: inherit;
 }
@@ -197,25 +203,21 @@ button {
 }
 
 img {
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
-@media screen and (max-width: 750px) {
-  .meditation {
-    height: 100%;
-    width: 100%;
-    margin: 0rem;
-  }
-}
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 750px) {
   :root {
-    font-size: 50%;
+    font-size: 75%;
   }
-
+}
+@media screen and (min-width: 1023px) {
   .meditation {
-    height: 100%;
-    width: 100%;
-    margin: 0rem;
+    min-height: 0;
+    min-width: 0;
+    height: 50rem;
+    width: 50rem;
+    margin: 10rem;
   }
 }

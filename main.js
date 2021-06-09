@@ -9,10 +9,10 @@ const imageRestart = document.getElementById("image-restart");
 
 //audio and background melody
 //audio
-const audio = document.getElementById("audio");
-const melody = document.getElementById("melody");
-melody.play();
-melody.loop = true;
+// const audio = document.getElementById("audio");
+// const melody = document.getElementById("melody");
+// melody.play();
+// melody.loop = true;
 
 //main settings
 time.innerHTML = "03:00";
@@ -28,7 +28,7 @@ const secondsCycle = () => {
   }
 
   if (secondsCircle == 1) {
-    audio.play();
+    // audio.play();
     text.innerText = "Breathe In!";
     circle.className = "breathe__circle grow1";
   } else if (secondsCircle == 2) {
@@ -38,14 +38,14 @@ const secondsCycle = () => {
     text.innerText = "Breathe In!";
     circle.className = "breathe__circle grow3";
   } else if (secondsCircle == 4) {
-    audio.play();
+    // audio.play();
     text.innerText = "Hold!";
     circle.className = "breathe__circle hold1";
   } else if (secondsCircle == 5) {
     text.innerText = "Hold!";
     circle.className = "breathe__circle hold2";
   } else if (secondsCircle == 6) {
-    audio.play();
+    // audio.play();
     text.innerText = "Breathe out!";
     circle.className = "breathe__circle shrink1";
   } else if (secondsCircle == 7) {
