@@ -1,5 +1,3 @@
-/* height: 568px;
-    width: 320px; */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -11,7 +9,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #fff, #ffcdb4);
+  background: radial-gradient(circle, #fff7f1 61%, #ffcdb4 100%);
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
@@ -181,7 +179,7 @@ body {
   color: #fff;
   background-color: inherit;
 }
-.meditation .music {
+.meditation .footer {
   grid-row: 3/4;
   display: flex;
   justify-content: space-around;
@@ -201,4 +199,22 @@ button {
 img {
   width: 4rem;
   height: 4rem;
+}
+
+@media screen and (max-width: 750px) {
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .meditation {
+    height: 100vh;
+    width: 100vh;
+    margin: 0rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 50%;
+  }
 }

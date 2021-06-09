@@ -1,13 +1,13 @@
-/* height: 568px;
-    width: 320px; */
 $peach-color1: #fff5ef;
 $peach-color2: #ffe7dc;
 $peach-color3: #ffdac8;
-$peach-color4: rgb(255, 205, 180);
+$peach-color4: #ffcdb4;
 $peach-color4-2: rgb(255, 203, 177);
 $peach-color4-3: rgb(255, 195, 164);
 $peach-color5: rgb(255, 192, 161);
 $peach-color6: #f6a983;
+
+//main settings
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,17 +18,19 @@ $peach-color6: #f6a983;
 }
 
 body {
-  background: linear-gradient(to bottom, #fff, $peach-color4);
+  background: radial-gradient(
+    circle,
+    rgba(255, 247, 241, 1) 61%,
+    rgba(255, 205, 180, 1) 100%
+  );
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+//block with meditation
 .meditation {
-  // min-height: 568px;
-  // min-width: 320px;
   height: 75rem;
   width: 75rem;
   background-color: $peach-color2;
@@ -48,6 +50,7 @@ body {
     justify-content: center;
     align-items: center;
   }
+  //timer
   .timer {
     grid-row: 1 / 2;
     position: relative;
@@ -64,6 +67,8 @@ body {
       font-size: 4rem;
     }
   }
+
+  //main part
   .breathe {
     grid-row: 2 / 3;
     background-color: $peach-color2;
@@ -198,7 +203,7 @@ body {
     }
   }
 
-  .music {
+  .footer {
     grid-row: 3 / 4;
     display: flex;
     justify-content: space-around;
@@ -207,7 +212,7 @@ body {
     background-color: $peach-color4;
   }
 }
-
+//2 buttons in the footer
 button {
   background-color: $peach-color4;
   border: none;
@@ -221,31 +226,22 @@ img {
 }
 
 //media queries
-// @media screen and (min-width: 480px) {
-//   :root {
-//     font-size: 81.25%; //1rem === 10px;
-//   }
-// }
-// @media screen and (min-width: 600px) {
-//   :root {
-//     font-size: 93.75%; //1rem === 10px;
-//   }
-// }
-// @media screen and (min-width: 801px) {
-//   :root {
-//     font-size: 112.5%; //1rem === 10px;
-//   }
-// }
-// @media screen and (min-width: 1025px) {
-//   :root {
-//     font-size: 118.75%; //1rem === 10px;
-//   }
-
-// min-height: 568px;
-// min-width: 320px;
-// }
-// @media screen and (min-width: 1281px) {
-//   :root {
-//     font-size: 125%; //1rem === 10px;
-//   }
-// }
+@media screen and (max-width: 750px) {
+  // :root {
+  //   font-size: 50%; //1rem === 10px;
+  // }
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+  .meditation {
+    height: 100vh;
+    width: 100vh;
+    margin: 0rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  :root {
+    font-size: 50%; //1rem === 8px;
+  }
+}
