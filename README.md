@@ -10,3 +10,7 @@
 <h4 align="center">the bell when the way of breath has to be changed</h4>
 
 
+
+<div align="center">
+<img align="center" src="https://user-images.githubusercontent.com/75121895/123848420-9c99e400-d90f-11eb-9a35-6e27bacaef82.png" alt="meditation app">
+</div>
